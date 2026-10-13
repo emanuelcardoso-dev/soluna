@@ -12,32 +12,31 @@
 
 ## 1. Project Overview
 
-Soluna is a family calendar and routine planner designed to help families organize their schedules, activities, and everyday routines in one shared place.
+Soluna is a shared family calendar and daily routine planner designed to help everyone in a household stay connected, understand each other's plans, and make the most of their time together.
 
-The main concept is to have a calendar displayed on the fridge door, making the family's plans visible and accessible to everyone at home. A web application will allow family members to manage schedules and routines, with the possibility of expanding to dedicated fridge-display hardware and Apple Watch integration in the future.
+The main concept is a calendar displayed on a screen in the home, ideally on the fridge door, where family members can quickly see the week's plans and understand what is happening today. A web application will allow the family to manage events and routines, with the possibility of expanding to dedicated display hardware and Apple Watch integration in the future.
 
-Soluna is also designed to help children gradually become involved in family planning. Through simple visuals, recognizable activity icons, and interactive routines, children can begin learning about daily schedules, responsibility, time, and decision-making as they grow.
+Soluna also places importance on children's development. Predictable daily structure can help children understand what to expect and navigate everyday transitions. Visual routines and simple interactions can help them participate in family life and gradually develop independence, in ways appropriate to their age and abilities.
 
-The long-term vision is to make family planning more collaborative, visual, accessible, and enjoyable.
+Soluna is not about scheduling every minute or enforcing a perfect routine. It is about creating a flexible, shared family rhythm that supports connection, clarity, and more time for what matters.
 
 ## 2. Vision and Goals
 
 ### Vision
 
-Create a shared family planning experience that brings everyday life into harmony and helps every family member feel included.
+Create a shared family planning experience that keeps family members connected, makes everyday life easier to understand, and helps the family make the most of its time together.
 
 ### Main goals
 
-- Bring family schedules, activities, and routines together in one place.
+- Keep family members informed about shared events, activities, and responsibilities.
 - Make the weekly family plan easy to understand at a glance.
-- Design an interface suitable for a fridge-mounted display.
-- Allow parents to manage family events and recurring routines.
-- Encourage children to participate in age-appropriate planning activities.
-- Make everyday routines more visual, engaging, and predictable.
-- Keep family information synchronized across devices.
-- Build a foundation for future smart-home and wearable integrations.
-- Develop the project using professional software engineering practices.
-- Use Soluna as a portfolio project demonstrating frontend, backend, testing, deployment, and system design skills.
+- Help children understand what happens next through visible, predictable routines.
+- Give children age-appropriate ways to participate in routines and gradually develop independence.
+- Help parents coordinate family life with less mental effort and fewer repeated reminders.
+- Create more opportunities for quality time by making plans and expectations clearer.
+- Design an interface suitable for a fridge-mounted display while remaining usable on other devices.
+- Keep household information private and synchronize it safely across authorized devices.
+- Build the project using professional software engineering practices and use it as a portfolio project.
 
 ## 3. Target Users
 
@@ -92,65 +91,137 @@ The initial architecture should support future devices and features without maki
 
 ## 5. Minimum Viable Product (MVP)
 
-The MVP is the smallest useful version of Soluna that can be tested by a family.
+The MVP is the smallest complete version of Soluna that a family can use to coordinate its week and follow everyday routines in one shared place. It must support both adults' need for a family overview and children's need to understand their day and participate in age-appropriate ways.
 
-### Essential features
+### 5.1 Core outcomes
 
-#### 5.1 Weekly family calendar
+The MVP should let a family:
 
-- Display the week from Monday to Sunday.
-- Show scheduled family events and activities.
-- Display event titles, dates, and times.
-- Provide clear navigation between weeks.
-- Highlight the current day.
-- Present information in a readable layout.
+1. **See the family's plans:** understand what is happening this week and when.
+2. **Understand today's rhythm:** see relevant daily routines in a clear sequence, including what comes next.
+3. **Participate:** mark a routine as complete and see that completion reflected in the app.
+4. **Stay in sync:** access the same household information from authorized devices.
 
-#### 5.2 Event management
+### 5.2 Must-have features
 
-- Create a family event.
-- Edit an existing event.
-- Delete an event.
-- Assign a date and time.
-- Display events on the calendar.
-- Validate required information.
-- Handle empty and error states.
+#### A. Weekly family calendar
 
-#### 5.3 Daily routines
+- Display Monday through Sunday.
+- Highlight the current day and provide navigation to previous and next weeks.
+- Show event title, date, start time, and end time.
+- Provide a clear, readable overview on desktop and a landscape tablet-sized display.
+- Provide a usable responsive layout on mobile browsers.
 
-- Create routine definitions, such as morning preparation or bedtime.
-- Support recurring routines.
-- Display routines in a simple checklist.
-- Mark a routine as completed.
-- Record completion separately from the routine definition.
-- Allow routines to be reused without creating duplicates every day.
+#### B. Event management
 
-#### 5.4 Responsive interface
+- Create an event with a title, date, start time, and end time.
+- Edit and delete an event.
+- Validate required fields and prevent invalid time ranges.
+- Show useful loading, empty, success, and error states.
+- Persist events so they remain available when the app is reopened or accessed on another authorized device.
 
-- Support desktop and laptop screens.
-- Support mobile browsers.
-- Provide a clear layout for a future tablet or fridge display.
-- Ensure important controls are usable with touch input.
+#### C. Daily routines
 
-#### 5.5 Basic household support
+- Create and edit reusable routine definitions, such as getting dressed, brushing teeth, preparing a bag, or bedtime.
+- Give routines a title and optional simple icon; allow a basic recurrence pattern such as selected weekdays.
+- Show the routines relevant to the selected day in a clear checklist or sequence.
+- Let a user mark a routine as complete for that date and undo the completion if needed.
+- Store completions separately from routine definitions so a routine can recur without creating a new routine each day.
+- Keep a completion for one date separate from its completion on another date.
 
-The initial data model should accommodate a household and multiple authorized family members.
+#### D. Shared household access and data protection
 
-Full household collaboration can be introduced after the basic calendar works locally.
+- Provide authenticated access to private family data for the MVP release.
+- Support a basic household membership model so household data is available only to authorized members.
+- Protect database reads and writes with tested access policies, including Supabase Row Level Security (RLS) if Supabase remains the chosen backend.
+- Never expose privileged service keys in browser code or public repository files.
+- Use fictional demo data in public screenshots and portfolio demonstrations.
 
-### Features outside the initial MVP
+#### E. Fridge-display-friendly experience
 
-These are planned possibilities, not requirements for the first release:
+- Make the main calendar and routine interactions comfortable to use on a touchscreen.
+- Use readable text, clear visual hierarchy, sufficient contrast, and appropriately large touch targets.
+- Test the responsive web app on a real tablet before considering dedicated display hardware.
+- The first version may run in a normal browser; a dedicated kiosk mode is not required for the MVP.
 
-- Dedicated touchscreen hardware.
-- E-paper display support.
-- Apple Watch application.
-- Smart-home integrations.
-- Push notifications.
-- Advanced family permissions.
-- Child-specific interactive modes.
-- Multiple interface languages.
-- AI-assisted scheduling.
-- External calendar integrations.
+#### F. Language and quality baseline
+
+- Launch the interface in English.
+- Keep user-facing text structured so more languages can be added later, but full translations are not required for the MVP.
+- Include automated tests for important date/routine logic and core user interactions.
+- Document how to install, run, test, and configure the application.
+
+### 5.3 Explicitly outside the MVP
+
+Do not build these for the initial release:
+
+- Arduino, ESP32, e-paper, or other custom fridge hardware.
+- Apple Watch or other wearable apps.
+- Smart-home or Home Assistant integrations.
+- Push notifications, reminders, or AI-assisted scheduling.
+- External calendar synchronization.
+- Multiple household profiles with complex role and permission systems.
+- Full Portuguese, Spanish, and Swedish translations.
+- A child account or reward system; children can participate through simple, supervised interactions in the shared household interface.
+- Advanced drag-and-drop planning or elaborate analytics.
+
+These ideas can be reconsidered after the basic web experience has been tested with real family use.
+
+### 5.4 MVP user stories
+
+- **As a family member,** I want to see the family's week in one place so I can understand upcoming plans.
+- **As a parent or caregiver,** I want to create, edit, and remove events so the shared calendar stays accurate.
+- **As a parent or caregiver,** I want to define recurring routines so I do not have to recreate the same activities every day.
+- **As a child,** I want to see what comes next so the day feels easier to understand.
+- **As a child with appropriate support,** I want to mark a routine as complete so I can take part in everyday responsibilities.
+- **As a household member,** I want the family's information to stay synchronized and private so that everyone sees the correct plan without exposing it to strangers.
+
+### 5.5 Acceptance criteria for the MVP
+
+The MVP is ready for family testing when all of the following are true:
+
+- [ ] An authorized user can sign in and access the household's calendar.
+- [ ] The calendar displays Monday through Sunday, highlights today, and supports week navigation.
+- [ ] An authorized user can create, edit, and delete an event; changes persist after reload.
+- [ ] Invalid event details are rejected with understandable feedback.
+- [ ] An authorized user can create and edit a routine and select the weekdays on which it should appear.
+- [ ] The routine list for a selected date shows the routines scheduled for that day.
+- [ ] A routine can be marked complete and unmarked; the completion is associated with the selected date and remains saved after reload.
+- [ ] Calendar events and routine data are visible only to authorized members of the relevant household, verified with permission tests.
+- [ ] The main flows work on desktop, mobile, and a landscape tablet viewport; touch targets and text remain usable.
+- [ ] Loading, empty, validation, and error states are handled for the core flows.
+- [ ] Automated tests cover the main event and routine behaviors, and lint/build checks pass.
+- [ ] Setup and testing instructions are documented in the repository.
+
+### 5.6 First GitHub task: Define Soluna's MVP features
+
+**Goal:** Turn the product vision into an agreed, bounded first-release scope before implementation grows.
+
+**Task:** Review the problem statement, core outcomes, must-have features, non-goals, user stories, and acceptance criteria in this section. Adjust wording or priorities where needed, then treat this section as the source of truth for the initial release.
+
+**Deliverable:** An MVP specification committed to the repository and linked from the project plan. A separate `docs/MVP.md` file may be created later if it is useful to keep the specification independently accessible.
+
+**This planning issue is complete when:**
+
+- [ ] The problem and intended users are clearly stated.
+- [ ] Must-have and out-of-scope features are explicitly separated.
+- [ ] Core user stories describe the adult and child experiences.
+- [ ] Each MVP feature has observable acceptance criteria.
+- [ ] The scope is small enough to build and test before starting hardware or wearable work.
+
+### 5.7 Implementation order
+
+Build in this order to reduce risk:
+
+1. Sketch the weekly calendar and today's routine view.
+2. Set up the React, TypeScript, and Vite foundation.
+3. Build the main screens with sample data.
+4. Implement event and routine interactions and their tests.
+5. Add authentication, persistence, household access controls, and RLS.
+6. Test responsive layouts and the core user journeys.
+7. Deploy a private or appropriately protected test version and try it on a tablet.
+
+The backend may be introduced after the main UI flow is clear during development, but secure persistence and household access controls are required before the MVP is used with real family data.
 
 ## 6. Future Features
 
@@ -694,14 +765,15 @@ The structure may evolve as the application grows. Keep it simple until there is
 
 The immediate priorities are:
 
-1. Finalize the MVP scope.
-2. Sketch the first weekly calendar interface.
-3. Set up the React and TypeScript application.
-4. Build the first visible calendar screen.
-5. Add event and routine interactions.
-6. Introduce the backend once the frontend flow is clear.
+1. Complete the GitHub issue **Define Soluna's MVP features** using the scope and acceptance criteria in Section 5.
+2. Sketch the combined weekly family calendar and today's routine experience.
+3. Set up the React, TypeScript, and Vite application.
+4. Build the first calendar screen with sample data.
+5. Implement event management and routine completion.
+6. Add secure persistence, authentication, household access controls, and RLS before using real family data.
+7. Test the core flows on desktop, mobile, and a landscape tablet.
 
-Do not begin with dedicated hardware or Apple Watch development.
+Do not begin with dedicated hardware, Apple Watch, or smart-home development.
 
 ## 20. Long-Term Vision
 
