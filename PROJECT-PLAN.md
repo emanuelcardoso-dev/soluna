@@ -278,54 +278,7 @@ Smart-home actions must be permission-controlled and designed with safety in min
 
 ## 7. Technology Stack
 
-The initial stack should be approachable, maintainable, and suitable for a portfolio project.
-
-### Frontend
-
-- React
-- TypeScript
-- Vite
-- CSS Modules or Tailwind CSS
-- React Testing Library
-- Vitest
-
-### Backend and database
-
-- Supabase
-- PostgreSQL
-- Supabase Authentication
-- Row Level Security (RLS)
-- Database migrations
-
-### Development tools
-
-- Visual Studio Code
-- Git
-- GitHub
-- GitHub Issues
-- GitHub Projects
-
-### Quality assurance
-
-- Vitest for unit tests.
-- React Testing Library for component tests.
-- Playwright for end-to-end tests.
-- ESLint for linting.
-- Prettier for consistent formatting.
-- GitHub Actions for continuous integration.
-
-### Deployment
-
-- Vercel or another suitable frontend hosting platform.
-- Supabase for backend services.
-
-### Future hardware and platforms
-
-- SwiftUI and watchOS for Apple Watch.
-- An existing tablet for the first fridge-display prototype.
-- Potential ESP32 touchscreen or e-paper hardware for a later dedicated display.
-
-Technology choices may change if testing or implementation reveals a better solution.
+Check file TECH-STACK.md.
 
 ## 8. Internationalization and Localization
 
