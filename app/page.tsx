@@ -1,7 +1,9 @@
+import { Header } from "./components/Header";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Soluna dev</h1>
+    <main className="px-4 py-6">
+      <Header />
     </main>
   );
 }
